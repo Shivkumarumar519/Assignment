@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Calculator</title>
+    <script>
+        function dis(val) {
+            document.getElementById("result").value += val
+        }
+        function solve() {
+            let x = document.getElementById("result").value
+            let y = eval(x)
+            document.getElementById("result").value = y
+        }
+        function clr() {
+            document.getElementById("result").value = ""
+        }
+    </script>
+
+    <style>
+
+        body {
+            background-color: #A6ACAF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+           
+            box-shadow: 10px 10px 10px 10px #909497;
+           
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .row input {
+            flex: 1;
+            padding: 30px;
+            color: white;
+            font-size: 24px; 
+            border: none;
+            background-color: #212121; 
+            margin: 0;
+            cursor: pointer;
+            outline: none;
+        }
+        
+
+        input[type="text"] {
+            flex: 1;
+            padding: 30px;
+            font-size: 24px;
+            background-color: white;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            
+           
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <input style="min-width: 293px; color: black; " type="text" id="result" disabled>
+            <input style="background-color: #129688;" type="button" onclick="clr()" value="AC">
+        </div>
+        <div class="row">
+            <input style="background-color: #212121;" type="button" onclick="dis('9')" value="9">
+            <input style="background-color: #212121;" type="button" onclick="dis('8')" value="8">
+            <input style="background-color: #212121;" type="button" onclick="dis('7')" value="7">
+            <input style="background-color: #757575;" type="button" onclick="dis('+')" value="+">
+        </div>
+        <div class="row">
+            <input style="background-color: #212121;" type="button" onclick="dis('4')" value="4">
+            <input style="background-color: #212121;" type="button" onclick="dis('5')" value="5">
+            <input style="background-color: #212121;" type="button" onclick="dis('6')" value="6">
+            <input style="background-color: #757575;" type="button" onclick="dis('-')" value="-">
+        </div>
+        <div class="row">
+            <input style="background-color: #212121;" type="button" onclick="dis('1')" value="1">
+            <input style="background-color: #212121;" type="button" onclick="dis('2')" value="2">
+            <input style="background-color: #212121;" type="button" onclick="dis('3')" value="3">
+            <input style="background-color: #757575;" type="button" onclick="dis('/')" value=" &#xF7">
+        </div>
+        <div class="row">
+            <input style="background-color: #212121;" type="button" onclick="dis('.')" value=".">
+            <input style="background-color: #212121;" type="button" onclick="dis('0')" value="0">
+            <input style="background-color: #212121;" type="button" onclick="solve()" value="=">
+            <input style="background-color: #757575;" type="button" onclick="dis('*')" value="&#215">
+            
+        </div>
+    </div>
+
+</body>
+
+</html>
